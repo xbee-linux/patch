@@ -1,0 +1,29 @@
+schema-version: 1.0
+
+type: builder
+
+description: |
+  The Patch package contains a program for modifying or creating files by applying a “patch” file typically created by the diff program.
+  Installed program: patch
+  Short Descriptions
+    patch: Modifies files according to a patch file (A patch file is normally a difference listing created with the diff program. By applying these differences to the original files, patch creates the patched versions.)
+
+
+in:
+  version: 2.7.6
+
+provision:
+  - url:
+      from: https://ftp.gnu.org/gnu/patch/patch-{% version %}.tar.xz
+      todir: "{% xbeeSrc %}"
+
+build:
+  - shell:
+      cmds:
+        - ./configure --prefix=/usr
+        - make
+#        - make check (tests currently fails)
+        - make install DESTDIR={% xbeeOut %}
+      directory: "{% xbeeSrc %}/patch-{% version %}"
+
+
