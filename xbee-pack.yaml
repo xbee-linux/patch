@@ -10,7 +10,8 @@ description: |
 
 
 var:
-  version: 2.7.6
+  xbee:
+    version: 2.7.6
 
 provision:
   url: https://ftp.gnu.org/gnu/patch/patch-{{ .version }}.tar.xz
