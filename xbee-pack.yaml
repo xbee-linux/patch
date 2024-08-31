@@ -14,7 +14,7 @@ var:
     version: 2.7.6
 
 provision:
-  url: https://ftp.gnu.org/gnu/patch/patch-{{ .version }}.tar.xz
+  url: https://ftp.gnu.org/gnu/patch/patch-{{ .xbee.version }}.tar.xz
 
 build:
   - shell:
@@ -23,6 +23,6 @@ build:
         - make
 #        - make check (tests currently fails)
         - make install DESTDIR={{ .xbee.out }}
-      directory: "{{ .xbee.src }}/patch-{{ .version }}"
+      directory: "{{ .xbee.src }}/patch-{{ .xbee.version }}"
 
 
