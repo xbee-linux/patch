@@ -1,7 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
 description: |
   The Patch package contains a program for modifying or creating files by applying a “patch” file typically created by the diff program.
   Installed program: patch
